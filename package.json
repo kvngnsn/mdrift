@@ -1,0 +1,38 @@
+{
+  "name": "mdrift",
+  "private": true,
+  "version": "2.2.0",
+  "description": "A small, offline Markdown reader and editor for macOS",
+  "scripts": {
+    "build:web": "node scripts/build-web.mjs",
+    "build": "npm run build:web && ./scripts/build.sh",
+    "test": "npm run test:editor && npm run test:finder",
+    "test:native": "npm run build:web && ./scripts/verify-native.sh",
+    "package": "npm run build && npm run build:finder && ./scripts/package.sh",
+    "build:finder": "python3 scripts/build-finder.py",
+    "test:editor": "npm run build:web && node tests/editor.test.cjs",
+    "test:finder": "python3 tests/finder_test.py",
+    "format": "prettier --write 'src/*.js' src/web/index.html src/web/style.css scripts/build-web.mjs tests/editor.test.cjs README.md CONTRIBUTING.md THIRD_PARTY_NOTICES.md package.json .github/workflows/ci.yml",
+    "format:check": "prettier --check 'src/*.js' src/web/index.html src/web/style.css scripts/build-web.mjs tests/editor.test.cjs README.md CONTRIBUTING.md THIRD_PARTY_NOTICES.md package.json .github/workflows/ci.yml",
+    "format:swift": "xcrun swift-format format -i src/*.swift scripts/make-icon.swift tests/NativeTests.swift",
+    "format:swift:check": "xcrun swift-format lint --strict src/*.swift scripts/make-icon.swift tests/NativeTests.swift"
+  },
+  "devDependencies": {
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/lang-markdown": "^6.5.2",
+    "@codemirror/language": "^6.12.4",
+    "@codemirror/state": "^6.7.5",
+    "@codemirror/view": "^6.43.12",
+    "@fontsource-variable/source-code-pro": "^5.3.0",
+    "@lezer/highlight": "^1.2.3",
+    "dompurify": "3.4.16",
+    "esbuild": "^0.28.2",
+    "marked": "18.0.13",
+    "playwright": "1.63.0",
+    "prettier": "3.9.9"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  }
+}

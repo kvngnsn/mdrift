@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: mdrift-asset:; font-src 'self'; connect-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <title>mdrift</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="vendor/marked.js"></script>
+    <script defer src="vendor/purify.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header class="titlebar">
+      <div class="document-label">
+        <span id="document-name">untitled.md</span
+        ><span id="dirty-dot" hidden aria-label="Unsaved changes" title="Unsaved changes"></span>
+      </div>
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        role="switch"
+        aria-checked="false"
+        aria-label="Light mode"
+        title="Change appearance"
+      >
+        <span class="theme-track" aria-hidden="true"></span>
+      </button>
+    </header>
+    <main id="editor" aria-label="Markdown document"></main>
+    <div id="notice" role="status" hidden></div>
+  </body>
+</html>
