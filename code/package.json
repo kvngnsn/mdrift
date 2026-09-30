@@ -12,8 +12,8 @@
     "build:finder": "python3 scripts/build-finder.py",
     "test:editor": "npm run build:web && node tests/editor.test.cjs",
     "test:finder": "python3 tests/finder_test.py",
-    "format": "prettier --write 'src/*.js' src/web/index.html src/web/style.css scripts/build-web.mjs tests/editor.test.cjs README.md CONTRIBUTING.md THIRD_PARTY_NOTICES.md package.json .github/workflows/ci.yml",
-    "format:check": "prettier --check 'src/*.js' src/web/index.html src/web/style.css scripts/build-web.mjs tests/editor.test.cjs README.md CONTRIBUTING.md THIRD_PARTY_NOTICES.md package.json .github/workflows/ci.yml",
+    "format": "prettier --write 'src/*.js' src/web/index.html src/web/style.css scripts/build-web.mjs tests/editor.test.cjs ../README.md THIRD_PARTY_NOTICES.md package.json ../.github/workflows/ci.yml",
+    "format:check": "prettier --check 'src/*.js' src/web/index.html src/web/style.css scripts/build-web.mjs tests/editor.test.cjs ../README.md THIRD_PARTY_NOTICES.md package.json ../.github/workflows/ci.yml",
     "format:swift": "xcrun swift-format format -i src/*.swift scripts/make-icon.swift tests/NativeTests.swift",
     "format:swift:check": "xcrun swift-format lint --strict src/*.swift scripts/make-icon.swift tests/NativeTests.swift"
   },

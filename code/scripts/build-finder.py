@@ -5,7 +5,7 @@ import plistlib
 import uuid
 
 root = pathlib.Path(__file__).resolve().parent.parent
-bundle = root / 'dist' / 'New Markdown File.workflow'
+bundle = root / 'build' / 'New Markdown File.workflow'
 resources = bundle / 'Contents' / 'Resources'
 resources.mkdir(parents=True, exist_ok=True)
 

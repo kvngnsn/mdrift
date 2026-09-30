@@ -57,7 +57,7 @@ if [[ "${MDRIFT_NATIVE_TESTS:-0}" == "1" ]]; then
   /usr/libexec/PlistBuddy -c 'Set :CFBundleDisplayName mdrift QA' "$staged_app/Contents/Info.plist"
 fi
 ditto "$project_dir/build/web" "$staged_app/Contents/Resources/web"
-cp "$project_dir/LICENSE" "$staged_app/Contents/Resources/LICENSE"
+cp "$project_dir/../LICENSE" "$staged_app/Contents/Resources/LICENSE"
 cp "$project_dir/THIRD_PARTY_NOTICES.md" "$staged_app/Contents/Resources/THIRD_PARTY_NOTICES.md"
 swift -sdk "$sdk_path" -module-cache-path "$build_dir/module-cache" \
   "${compiler_flags[@]}" "$project_dir/scripts/make-icon.swift" "$build_dir/AppIcon.iconset"
